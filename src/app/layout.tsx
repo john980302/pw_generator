@@ -56,7 +56,8 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   verification: {
-    google: "u0tfgRyLeo2Li6KlMeemDknjVo2D_tgKwG7v4EgEcBc",
+    // Google Search Console 인증 코드를 여기에 추가하세요
+    // google: "your-google-verification-code",
   },
 };
 
