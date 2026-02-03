@@ -52,7 +52,7 @@ function StrengthCharacter({ strength }: { strength: string }) {
             <polygon points="100,20 102,26 108,26 103,30 105,36 100,32 95,36 97,30 92,26 98,26" fill="#fbbf24"/>
           </svg>
         </div>
-        <span className="text-emerald-400 font-bold text-sm">철벽 보안!</span>
+        <span className="text-emerald-600 dark:text-emerald-400 font-bold text-sm">철벽 보안!</span>
       </div>
     );
   }
@@ -84,7 +84,7 @@ function StrengthCharacter({ strength }: { strength: string }) {
           <ellipse cx="100" cy="75" rx="8" ry="12" fill="#fcd34d" transform="rotate(-20 100 75)"/>
           <rect x="95" y="82" width="10" height="15" rx="3" fill="#fcd34d" transform="rotate(-20 100 90)"/>
         </svg>
-        <span className="text-blue-400 font-bold text-sm">튼튼해요!</span>
+        <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">튼튼해요!</span>
       </div>
     );
   }
@@ -118,7 +118,7 @@ function StrengthCharacter({ strength }: { strength: string }) {
           {/* 땀방울 */}
           <ellipse cx="90" cy="55" rx="4" ry="6" fill="#60a5fa"/>
         </svg>
-        <span className="text-yellow-400 font-bold text-sm">좀 더 강하게...</span>
+        <span className="text-yellow-600 dark:text-yellow-400 font-bold text-sm">좀 더 강하게...</span>
       </div>
     );
   }
@@ -160,7 +160,7 @@ function StrengthCharacter({ strength }: { strength: string }) {
         <polygon points="15,25 25,45 5,45" fill="#fbbf24" stroke="#92400e" strokeWidth="1"/>
         <text x="15" y="42" textAnchor="middle" fill="#92400e" fontSize="14" fontWeight="bold">!</text>
       </svg>
-      <span className="text-red-400 font-bold text-sm">위험해요!</span>
+      <span className="text-red-600 dark:text-red-400 font-bold text-sm">위험해요!</span>
     </div>
   );
 }
@@ -220,97 +220,100 @@ export default function Home() {
   const strength = getPasswordStrength();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-4 md:p-8">
-      <div className="mx-auto max-w-lg">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-white pt-20 pb-4 px-4 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 md:pt-24 md:px-8 md:pb-8">
+      <div className="mx-auto max-w-lg md:max-w-2xl lg:max-w-3xl">
         {/* Header */}
         <div className="mb-8 text-center">
           <div className="mb-4 inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 p-4 shadow-lg shadow-violet-500/25">
             <Lock className="h-8 w-8 text-white" />
           </div>
-          <h1 className="mb-2 text-3xl font-bold text-white">
+          <h1 className="mb-2 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
             비밀번호 생성기
           </h1>
-          <p className="text-slate-400">
+          <p className="text-slate-600 dark:text-slate-400 md:text-lg">
             안전한 비밀번호를 만들어보세요
           </p>
         </div>
 
         {/* Main Card */}
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-2xl backdrop-blur-sm">
+        <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-2xl backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 md:p-8">
 
-          {/* Character Display */}
-          <div className="mb-6 flex justify-center">
-            {password ? (
-              <div className="animate-in fade-in zoom-in duration-300">
-                <StrengthCharacter strength={strength.label} />
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-2 py-4">
-                <svg width="100" height="100" viewBox="0 0 120 120" className="opacity-30">
-                  <rect x="30" y="50" width="60" height="50" rx="8" fill="#475569" stroke="#334155" strokeWidth="2"/>
-                  <path d="M40 50 L40 35 Q40 15 60 15 Q80 15 80 35 L80 50" stroke="#334155" strokeWidth="8" fill="none" strokeLinecap="round"/>
-                  <circle cx="60" cy="75" r="8" fill="#334155"/>
-                </svg>
-                <span className="text-slate-500 text-sm">비밀번호를 생성해주세요</span>
-              </div>
-            )}
-          </div>
-
-          {/* Password Display */}
-          <div className="mb-6 space-y-3">
-            <div className="flex gap-2">
-              <div className="relative flex-1">
-                <Input
-                  type="text"
-                  readOnly
-                  value={password}
-                  placeholder="생성 버튼을 클릭하세요"
-                  className="h-14 w-full rounded-xl border-slate-700 bg-slate-800/50 pr-4 font-mono text-base text-white placeholder:text-slate-500 focus:border-violet-500 focus:ring-violet-500/20"
-                />
-              </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-14 w-14 rounded-xl border-slate-700 bg-slate-800/50 transition-all hover:border-violet-500 hover:bg-slate-700"
-                onClick={copyToClipboard}
-                disabled={!password}
-              >
-                {copied ? (
-                  <Check className="h-5 w-5 text-emerald-400" />
-                ) : (
-                  <Copy className="h-5 w-5 text-slate-400" />
-                )}
-              </Button>
+          {/* Password Section - Character + Input */}
+          <div className="mb-6 flex flex-col items-center gap-4 md:flex-row md:gap-6">
+            {/* Character Display */}
+            <div className="flex-shrink-0">
+              {password ? (
+                <div className="animate-in fade-in zoom-in duration-300">
+                  <StrengthCharacter strength={strength.label} />
+                </div>
+              ) : (
+                <div className="flex flex-col items-center gap-2">
+                  <svg width="100" height="100" viewBox="0 0 120 120" className="opacity-30">
+                    <rect x="30" y="50" width="60" height="50" rx="8" fill="#475569" stroke="#334155" strokeWidth="2"/>
+                    <path d="M40 50 L40 35 Q40 15 60 15 Q80 15 80 35 L80 50" stroke="#334155" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    <circle cx="60" cy="75" r="8" fill="#334155"/>
+                  </svg>
+                  <span className="text-slate-400 dark:text-slate-500 text-sm">비밀번호를 생성해주세요</span>
+                </div>
+              )}
             </div>
 
-            {/* Strength Bar */}
-            {password && (
-              <div className="flex items-center gap-3">
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-800">
-                  <div
-                    className={`h-full bg-gradient-to-r ${strength.barColor} transition-all duration-500`}
-                    style={{
-                      width: `${strength.label === "Very Strong" ? 100 : strength.label === "Strong" ? 75 : strength.label === "Medium" ? 50 : 25}%`,
-                    }}
+            {/* Password Display */}
+            <div className="w-full flex-1 space-y-3">
+              <div className="flex gap-2">
+                <div className="relative flex-1">
+                  <Input
+                    type="text"
+                    readOnly
+                    value={password}
+                    placeholder="생성 버튼을 클릭하세요"
+                    className="h-14 w-full rounded-xl border-slate-300 bg-slate-100/50 pr-4 font-mono text-base text-slate-900 placeholder:text-slate-400 focus:border-violet-500 focus:ring-violet-500/20 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder:text-slate-500 md:h-16 md:text-lg"
                   />
                 </div>
-                <span className={`text-sm font-medium ${
-                  strength.label === "Very Strong" ? "text-emerald-400" :
-                  strength.label === "Strong" ? "text-blue-400" :
-                  strength.label === "Medium" ? "text-amber-400" : "text-red-400"
-                }`}>
-                  {strength.label === "Very Strong" ? "매우 강함" :
-                   strength.label === "Strong" ? "강함" :
-                   strength.label === "Medium" ? "보통" : "약함"}
-                </span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-14 w-14 rounded-xl border-slate-300 bg-slate-100/50 transition-all hover:border-violet-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800/50 dark:hover:bg-slate-700 md:h-16 md:w-16"
+                  onClick={copyToClipboard}
+                  disabled={!password}
+                >
+                  {copied ? (
+                    <Check className="h-5 w-5 text-emerald-400" />
+                  ) : (
+                    <Copy className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+                  )}
+                </Button>
               </div>
-            )}
+
+              {/* Strength Bar */}
+              {password && (
+                <div className="flex items-center gap-3">
+                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+                    <div
+                      className={`h-full bg-gradient-to-r ${strength.barColor} transition-all duration-500`}
+                      style={{
+                        width: `${strength.label === "Very Strong" ? 100 : strength.label === "Strong" ? 75 : strength.label === "Medium" ? 50 : 25}%`,
+                      }}
+                    />
+                  </div>
+                  <span className={`text-sm font-medium ${
+                    strength.label === "Very Strong" ? "text-emerald-600 dark:text-emerald-400" :
+                    strength.label === "Strong" ? "text-blue-600 dark:text-blue-400" :
+                    strength.label === "Medium" ? "text-amber-600 dark:text-amber-400" : "text-red-600 dark:text-red-400"
+                  }`}>
+                    {strength.label === "Very Strong" ? "매우 강함" :
+                     strength.label === "Strong" ? "강함" :
+                     strength.label === "Medium" ? "보통" : "약함"}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Length Slider */}
-          <div className="mb-6 rounded-2xl bg-slate-800/50 p-4">
+          <div className="mb-6 rounded-2xl bg-slate-100/50 p-4 dark:bg-slate-800/50 md:p-6">
             <div className="mb-3 flex items-center justify-between">
-              <Label className="text-sm font-medium text-slate-300">
+              <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 비밀번호 길이
               </Label>
               <span className="rounded-lg bg-violet-500/20 px-3 py-1 font-mono text-sm font-bold text-violet-400">
@@ -325,7 +328,7 @@ export default function Home() {
               step={1}
               className="py-2"
             />
-            <div className="mt-2 flex justify-between text-xs text-slate-500">
+            <div className="mt-2 flex justify-between text-xs text-slate-400 dark:text-slate-500">
               <span>4</span>
               <span>64</span>
             </div>
@@ -333,10 +336,10 @@ export default function Home() {
 
           {/* Options */}
           <div className="mb-6 space-y-3">
-            <Label className="text-sm font-medium text-slate-300">
+            <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
               문자 종류
             </Label>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
               {(
                 [
                   ["uppercase", "대문자", "A-Z", "🔤"],
@@ -359,15 +362,15 @@ export default function Home() {
                   className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition-all ${
                     options[key]
                       ? "border-violet-500 bg-violet-500/10"
-                      : "border-slate-700 bg-slate-800/30 hover:border-slate-600"
+                      : "border-slate-300 bg-slate-100/30 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-800/30 dark:hover:border-slate-600"
                   }`}
                 >
                   <span className="text-xl">{emoji}</span>
                   <div className="flex flex-col items-start">
-                    <span className={`text-sm font-medium ${options[key] ? "text-violet-300" : "text-slate-300"}`}>
+                    <span className={`text-sm font-medium ${options[key] ? "text-violet-600 dark:text-violet-300" : "text-slate-700 dark:text-slate-300"}`}>
                       {label}
                     </span>
-                    <span className="text-xs text-slate-500">{hint}</span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500">{hint}</span>
                   </div>
                   <div className="ml-auto">
                     <Switch
@@ -384,7 +387,7 @@ export default function Home() {
           <Button
             onClick={generatePassword}
             disabled={!Object.values(options).some(Boolean)}
-            className="h-14 w-full rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-base font-bold shadow-lg shadow-violet-500/25 transition-all hover:from-violet-500 hover:to-purple-500 hover:shadow-violet-500/40 disabled:opacity-50"
+            className="h-14 w-full rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-base font-bold shadow-lg shadow-violet-500/25 transition-all hover:from-violet-500 hover:to-purple-500 hover:shadow-violet-500/40 disabled:opacity-50 md:h-16 md:text-lg"
             size="lg"
           >
             <RefreshCw className="mr-2 h-5 w-5" />
@@ -393,7 +396,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <p className="mt-6 text-center text-xs text-slate-500">
+        <p className="mt-6 text-center text-xs text-slate-400 dark:text-slate-500">
           생성된 비밀번호는 브라우저에서만 처리되며 서버로 전송되지 않습니다
         </p>
       </div>
