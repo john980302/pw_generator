@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, RefreshCw, AlertCircle, Clock, Newspaper } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/i18n";
 
 interface FeedItem {
   title: string;
@@ -27,26 +28,24 @@ const RSS_FEEDS: RSSFeed[] = [
   {
     name: "The Hacker News",
     url: "https://feeds.feedburner.com/TheHackersNews",
-    category: "보안 뉴스",
+    category: "Security News",
   },
   {
     name: "Krebs on Security",
     url: "https://krebsonsecurity.com/feed/",
-    category: "보안 분석",
+    category: "Security Analysis",
   },
   {
     name: "BleepingComputer",
     url: "https://www.bleepingcomputer.com/feed/",
-    category: "보안 뉴스",
+    category: "Security News",
   },
 ];
 
-// rss2json.com API 사용 (무료, 안정적)
 const RSS2JSON_API = "https://api.rss2json.com/v1/api.json?rss_url=";
 
-// 캐시 설정
 const CACHE_KEY = "securepass_news_cache";
-const CACHE_DURATION = 60 * 60 * 1000; // 1시간 (밀리초)
+const CACHE_DURATION = 60 * 60 * 1000;
 
 function getCache(): CachedData | null {
   try {
@@ -56,7 +55,6 @@ function getCache(): CachedData | null {
     const data: CachedData = JSON.parse(cached);
     const now = Date.now();
 
-    // 캐시가 만료되었는지 확인
     if (now - data.timestamp > CACHE_DURATION) {
       localStorage.removeItem(CACHE_KEY);
       return null;
@@ -76,7 +74,7 @@ function setCache(articles: FeedItem[]): void {
     };
     localStorage.setItem(CACHE_KEY, JSON.stringify(data));
   } catch {
-    // localStorage 용량 초과 등 에러 무시
+    // localStorage capacity exceeded, ignore
   }
 }
 
@@ -84,28 +82,6 @@ function stripHtml(html: string): string {
   if (typeof window === "undefined") return html;
   const doc = new DOMParser().parseFromString(html, "text/html");
   return doc.body.textContent || "";
-}
-
-function formatDate(dateStr: string): string {
-  try {
-    const date = new Date(dateStr);
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-    if (diffHours < 1) return "방금 전";
-    if (diffHours < 24) return `${diffHours}시간 전`;
-    if (diffDays < 7) return `${diffDays}일 전`;
-
-    return date.toLocaleDateString("ko-KR", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  } catch {
-    return dateStr;
-  }
 }
 
 interface RSS2JsonResponse {
@@ -148,16 +124,38 @@ async function fetchRSS(feed: RSSFeed): Promise<FeedItem[]> {
 }
 
 export default function NewsFeed() {
+  const { t, locale } = useTranslation();
   const [articles, setArticles] = useState<FeedItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedSource, setSelectedSource] = useState<string>("all");
 
+  const formatDate = (dateStr: string): string => {
+    try {
+      const date = new Date(dateStr);
+      const now = new Date();
+      const diffMs = now.getTime() - date.getTime();
+      const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+      if (diffHours < 1) return t.news.justNow;
+      if (diffHours < 24) return `${diffHours}${t.news.hoursAgo}`;
+      if (diffDays < 7) return `${diffDays}${t.news.daysAgo}`;
+
+      return date.toLocaleDateString(locale === "ko" ? "ko-KR" : locale === "zh" ? "zh-CN" : locale === "ja" ? "ja-JP" : "en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch {
+      return dateStr;
+    }
+  };
+
   const loadFeeds = async (forceRefresh = false) => {
     setLoading(true);
     setError(null);
 
-    // 캐시 확인 (강제 새로고침이 아닌 경우)
     if (!forceRefresh) {
       const cached = getCache();
       if (cached) {
@@ -168,14 +166,12 @@ export default function NewsFeed() {
     }
 
     try {
-      // 모든 피드를 병렬로 가져오기
       const results = await Promise.all(
         RSS_FEEDS.map((feed) => fetchRSS(feed))
       );
 
       const allItems = results.flat();
 
-      // 날짜순 정렬
       allItems.sort((a, b) => {
         const dateA = new Date(a.pubDate).getTime();
         const dateB = new Date(b.pubDate).getTime();
@@ -184,16 +180,15 @@ export default function NewsFeed() {
 
       setArticles(allItems);
 
-      // 캐시에 저장
       if (allItems.length > 0) {
         setCache(allItems);
       }
 
       if (allItems.length === 0) {
-        setError("뉴스를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.");
+        setError(t.news.error);
       }
     } catch {
-      setError("뉴스를 불러오는 중 오류가 발생했습니다.");
+      setError(t.news.errorGeneric);
     } finally {
       setLoading(false);
     }
@@ -201,6 +196,7 @@ export default function NewsFeed() {
 
   useEffect(() => {
     loadFeeds();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredArticles = selectedSource === "all"
@@ -224,7 +220,7 @@ export default function NewsFeed() {
                   : "bg-slate-200 text-slate-600 hover:bg-slate-300 hover:text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white"
               }`}
             >
-              {source === "all" ? "전체" : source}
+              {source === "all" ? t.news.all : source}
             </button>
           ))}
         </div>
@@ -236,7 +232,7 @@ export default function NewsFeed() {
           className="border-slate-300 bg-slate-100/50 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800/50 dark:hover:bg-slate-700"
         >
           <RefreshCw className={`mr-2 h-4 w-4 ${loading ? "animate-spin" : ""}`} />
-          새로고침
+          {t.news.refresh}
         </Button>
       </div>
 
@@ -244,7 +240,7 @@ export default function NewsFeed() {
       {loading && (
         <div className="flex flex-col items-center justify-center py-12">
           <RefreshCw className="h-8 w-8 animate-spin text-violet-500" />
-          <p className="mt-4 text-slate-500 dark:text-slate-400">뉴스를 불러오는 중...</p>
+          <p className="mt-4 text-slate-500 dark:text-slate-400">{t.news.loading}</p>
         </div>
       )}
 
@@ -259,7 +255,7 @@ export default function NewsFeed() {
             size="sm"
             className="mt-4 border-red-500/50 hover:bg-red-500/20"
           >
-            다시 시도
+            {t.news.retry}
           </Button>
         </div>
       )}
@@ -291,7 +287,7 @@ export default function NewsFeed() {
                 {article.description}
               </p>
               <div className="flex items-center gap-1 text-xs text-violet-400">
-                <span>자세히 보기</span>
+                <span>{t.news.readMore}</span>
                 <ExternalLink className="h-3 w-3" />
               </div>
             </a>
@@ -303,7 +299,7 @@ export default function NewsFeed() {
       {!loading && !error && filteredArticles.length === 0 && (
         <div className="flex flex-col items-center justify-center py-12">
           <Newspaper className="h-12 w-12 text-slate-400 dark:text-slate-600" />
-          <p className="mt-4 text-slate-500 dark:text-slate-400">뉴스가 없습니다.</p>
+          <p className="mt-4 text-slate-500 dark:text-slate-400">{t.news.noNews}</p>
         </div>
       )}
     </div>

@@ -1,15 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Korean -->
   <url>
-    <loc>https://pw-generator.pages.dev/</loc>
+    <loc>https://pw-generator.pages.dev/ko</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
   </url>
   <url>
-    <loc>https://pw-generator.pages.dev/news</loc>
+    <loc>https://pw-generator.pages.dev/ko/news</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- English -->
+  <url>
+    <loc>https://pw-generator.pages.dev/en</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/en/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- Chinese -->
+  <url>
+    <loc>https://pw-generator.pages.dev/zh</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/zh/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- Japanese -->
+  <url>
+    <loc>https://pw-generator.pages.dev/ja</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/ja/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- Hindi -->
+  <url>
+    <loc>https://pw-generator.pages.dev/hi</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/hi/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- French -->
+  <url>
+    <loc>https://pw-generator.pages.dev/fr</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/fr/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- Portuguese -->
+  <url>
+    <loc>https://pw-generator.pages.dev/pt</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/pt/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://pw-generator.pages.dev/de</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de"/>
+  </url>
+  <url>
+    <loc>https://pw-generator.pages.dev/de/news</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pw-generator.pages.dev/ko/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pw-generator.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pw-generator.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pw-generator.pages.dev/ja/news"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pw-generator.pages.dev/hi/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pw-generator.pages.dev/fr/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pw-generator.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pw-generator.pages.dev/de/news"/>
   </url>
 </urlset>
